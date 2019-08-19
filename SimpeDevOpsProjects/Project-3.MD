@@ -21,12 +21,18 @@ usermod -aG docker dockeradmin
 ```sh
 mkdir /opt/docker
 
+change the permissions of /opt/docker with dockeradmin user!
+
+In the Docker machine, go to /etc/ssh/sshd_config file and change/enable "passwordauthentication to yes"
+
+Then run service sshd restart
+
 ### vi Dockerfile
 # Pull base image 
 From tomcat:8-jre8 
 
 # Maintainer
-MAINTAINER "valaxytech" 
+MAINTAINER "MyTech" 
 
 # copy war file on to container 
 COPY ./webapp.war /usr/local/tomcat/webapps
